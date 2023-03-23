@@ -10,17 +10,6 @@ export const Task = ({ info }) => {
     { id: 3, name: "Study", completed: false }
   ]);
   const [show, setShow] = useState(true);
-//   const styles = {
-//     color: "red",
-//     border: "2px solid",
-//         // ======================
-//         // DYNAMIC INLINE LEVEL STYLING
-//         // ======================
-    
-//     borderColor: show? "green":"red",
-//     padding: "20px"
-// }
-
 function handleDelete(id) {
   setTasks(tasks.filter(task => id !== task.id));
 
@@ -28,14 +17,10 @@ function handleDelete(id) {
 
 return (
   <section className="taskList">
-    {/* ======================
-    INLINE LEVEL STYLING
-    ====================== */}
-    
     <ul>
       <div className="head">
       <h1>Task List</h1>
-      <button onClick={() => setShow(!show)}>{show?"Hide":"Show"}</button>
+      <button className="trigger" onClick={() => setShow(!show)}>{show?"Hide Task":"Show Task"}</button>
       </div>
       {
         show && tasks.map((task) => (
